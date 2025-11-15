@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses - Scope India</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .main-nav li {
+            margin-left: 2rem;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: #007bff;
+        }
+
+        .login-nav .btn {
+            margin-left: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-student {
+            background: #007bff;
+        }
+
+        .btn-student:hover {
+            background: #0056b3;
+        }
+
+        .btn-teacher {
+            background: #28a745;
+        }
+
+        .btn-teacher:hover {
+            background: #1e7e34;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .courses-section h1 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .course-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+        
+        .card-content p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .btn-secondary {
+            background: #007bff;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .social-media a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1rem;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #007bff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+
+            .main-nav {
+                margin-top: 1rem;
+            }
+
+            .login-nav {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">Scope India</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#about">About Us</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="login-nav">
+                <a href="{% url 'studentforms' %}" class="btn btn-student">Student Login</a>
+                <a href="{% url 'teacherforms' %}" class="btn btn-teacher">Teacher Login</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="courses-section">
+        <div class="container">
+            <h1>Explore Our Courses</h1>
+            <div class="course-cards">
+                <div class="card">
+                    <img src="/static/image/datasic.jpg" alt="Data Science & AI">
+                    <div class="card-content">
+                        <h3>Data Science & AI</h3>
+                        <p>Unlock the power of data and artificial intelligence. Learn Python, Machine Learning, and advanced AI concepts.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/static/image/webdev.jpg" alt="Data Analytics">
+                    <div class="card-content">
+                        <h3>Data Analytics</h3>
+                        <p>Become a data-driven decision maker. Master tools like SQL, Excel, and data visualization libraries.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/static/image/webdev.jpg" alt="Full Stack Development (Java)">
+                    <div class="card-content">
+                        <h3>Full Stack Development (Java)</h3>
+                        <p>Build robust web applications with Java, Spring, and modern frontend frameworks.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/static/image/webdev.jpg" alt="Full Stack Development (Python)">
+                    <div class="card-content">
+                        <h3>Full Stack Development (Python)</h3>
+                        <p>Develop dynamic websites and applications using Python, Django, and JavaScript.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/static/image/webdev.jpg" alt="Full Stack Development (MERN)">
+                    <div class="card-content">
+                        <h3>Full Stack Development (MERN)</h3>
+                        <p>Master the MERN stack: MongoDB, Express.js, React, and Node.js for modern web development.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/static/image/webdev.jpg" alt="Full Stack Development (MEAN)">
+                    <div class="card-content">
+                        <h3>Full Stack Development (MEAN)</h3>
+                        <p>Learn the MEAN stack: MongoDB, Express.js, Angular, and Node.js to build powerful applications.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/static/image/webdev.jpg" alt="DevOps">
+                    <div class="card-content">
+                        <h3>DevOps</h3>
+                        <p>Bridge the gap between development and operations. Learn CI/CD, containerization, and cloud infrastructure.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/static/image/webdev.jpg" alt="CCNA">
+                    <div class="card-content">
+                        <h3>CCNA</h3>
+                        <p>Start your networking career with the globally recognized CCNA certification.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/static/image/webdev.jpg" alt="AWS">
+                    <div class="card-content">
+                        <h3>AWS Certified Solutions Architect</h3>
+                        <p>Become an expert in designing and deploying scalable systems on Amazon Web Services.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/static/image/webdev.jpg" alt="Azure">
+                    <div class="card-content">
+                        <h3>Microsoft Azure Administrator</h3>
+                        <p>Master the skills to manage cloud services in Microsoft Azure.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/static/image/webdev.jpg" alt="Software Testing">
+                    <div class="card-content">
+                        <h3>Software Testing</h3>
+                        <p>Ensure software quality with manual and automated testing techniques.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Scope India. All Rights Reserved.</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/scopeindia.org/">Facebook</a>
+                <a href="https://www.instagram.com/scopeindia/">Instagram</a>
+                <a href="https://in.linkedin.com/pub/dir/Scope/India/in-0-India#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{%extends 'layout.html'%}
+ 
+ {%block formpage%}
+<div style="color:rgb(0, 113, 128);
+    text-align:center;
+    font-size:20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight:bold;
+    text-decoration:underline;
+    background-image: url('/static/image/bat.jpg');
+    background-attachment: fixed;
+    background-size:cover;
+    padding:10px;
+    border:2px solid black;
+    box-shadow: 5px 10px 18px #888888;"><h1 style="font-size: xx-large;">MANAGEMENT FORM</h1>
+<h1>{{p}}</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {%for f in form %}
+    {{f.label_tag}} <br>
+    {{f}} <br>
+    <div style="color: brown;">{{f.errors}}</div>
+    {%endfor%}  
+    <button onclick="fun1()">Submit</button>
+    </form>
+
+</div>
+{%endblock%}
+<script>
+    function fun1(){
+        alert("form submitted successfully");
+    }

@@ -1,0 +1,27 @@
+<!-- <body>
+    <ul> 
+        {% for i in data %}
+        <li>{ {{i.name}}}</li>
+        {% endfor %}
+    </ul>
+</body> -->
+
+<table border="1">
+<thead>
+
+    <tr>
+        <th>name</th>
+        
+    </tr>
+
+</thead>
+<tbody>
+    {% for i in data %}
+    <tr>
+        <td>{{i.name}}</td>
+        <!-- <td><a href="{% url 'display' %}">view all data</a></td> -->
+        <td><a href="{% url 'specificdata' i.id %}">go</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+    </table>

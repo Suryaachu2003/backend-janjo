@@ -1,0 +1,3 @@
+- [x] Update EMAIL_BACKEND in settings.py to use custom EmailBackend
+- [x] Modify contact view in views.py to send email to admin and include user's email in message
+- [ ] Test the email functionality

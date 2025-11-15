@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+ 
+ {% block content %}
+
+ 
+ <h1>About Us</h1>
+ <h2>welcome {{mysession}}</h2>
+<button onclick="fun()">submit</button> 
+<a href="{% url 'login' %}">LOG OUT</a>
+ {% endblock %}
